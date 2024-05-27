@@ -1,1 +1,1 @@
-export * from './SectionStart'
+export * from './banner'

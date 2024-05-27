@@ -1,12 +1,12 @@
 import React from 'react'
 import { Header } from './header'
-import { SectionStart } from './body'
+import { MyComponent } from './container'
 
 function App() {
   return (
     <div className='App'>
       <Header />
-      <SectionStart />
+      <MyComponent />
     </div>
   )
 }
