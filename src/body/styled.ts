@@ -3,6 +3,7 @@ import { SearchOutlined } from '@ant-design/icons'
 
 const Outer = styled.div`
   background: #ffffff;
+  padding-bottom: 44px;
 `
 
 const Menu = styled.div`
@@ -74,6 +75,7 @@ const P = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 `
 
 const Feature = styled.div`
@@ -103,7 +105,6 @@ const Button = styled.div`
 const ButtonContent = styled.p`
   color: #6a983c;
   font-family: 'Noto Sans';
-  /* font-size: 18px; */
   font-style: normal;
   font-weight: 700;
   line-height: normal;

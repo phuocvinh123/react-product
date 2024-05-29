@@ -8,8 +8,9 @@ const Bodys = styled.div`
 const BodyContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 35px;
-  margin-right: 190px;
+  margin-left: 30px;
+  margin-right: 140px;
+  width: 350px;
 `
 const BodyList = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ const P = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: pointer;
 `
 const H1 = styled.h1`
   color: var(--C1-A, #151515);
@@ -35,6 +37,7 @@ const H1 = styled.h1`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  cursor: pointer;
 `
 
 const H2 = styled.h2`
@@ -44,6 +47,7 @@ const H2 = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 `
 
 const Image = styled.img`
@@ -82,6 +86,12 @@ const DivEnd = styled.div`
   background: #f9f9f9;
 `
 
+const DivTotal = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`
+
 export const Body = () => {
   return (
     <>
@@ -109,26 +119,30 @@ export const Body = () => {
           <P>5000円から</P>
           <P>10000円から</P>
         </BodyContent>
-        <BodyList>
-          <Image src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></Image>
-          <Div>
-            <ImgRound src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></ImgRound>
-            <P>むくりこ</P>
-          </Div>
-          <Div>
-            <H2>イケア家具組み立て代行</H2>
-          </Div>
-          <Div>
-            <P>IKEA家具の組立します　組立途中、再組立/調整も対応します</P>
-          </Div>
-          <DivEnd>
-            <ImgRound
-              style={{ marginLeft: '14px' }}
-              src='https://i.pinimg.com/736x/e3/a4/54/e3a45433562a80e6355f12effff6a3d3.jpg'
-            ></ImgRound>
-            <H2 style={{ marginRight: '14px' }}>¥ 12,000</H2>
-          </DivEnd>
-        </BodyList>
+        <DivTotal>
+          {Array.from({ length: 12 }, (_, index) => (
+            <BodyList key={index}>
+              <Image src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></Image>
+              <Div>
+                <ImgRound src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></ImgRound>
+                <P>むくりこ</P>
+              </Div>
+              <Div>
+                <H2>イケア家具組み立て代行</H2>
+              </Div>
+              <Div>
+                <P>IKEA家具の組立します　組立途中、再組立/調整も対応します</P>
+              </Div>
+              <DivEnd>
+                <ImgRound
+                  style={{ marginLeft: '14px' }}
+                  src='https://i.pinimg.com/736x/e3/a4/54/e3a45433562a80e6355f12effff6a3d3.jpg'
+                ></ImgRound>
+                <H2 style={{ marginRight: '14px' }}>¥ 12,000</H2>
+              </DivEnd>
+            </BodyList>
+          ))}
+        </DivTotal>
       </Bodys>
     </>
   )
