@@ -12,7 +12,7 @@ const Menu = styled.div`
   margin-right: 20px;
 `
 
-const MenuItem = styled.p`
+const MenuItem = styled.button`
   color: #000;
   font-family: 'Noto Sans JP';
   font-size: 12px;
@@ -21,6 +21,31 @@ const MenuItem = styled.p`
   line-height: normal;
   cursor: pointer;
   margin-left: 35px;
+  border: none;
+  background: #ffffff;
+  margin-top: 10px;
+
+  &:hover {
+    color: #e67e22;
+  }
+`
+
+const MenuButton = styled.button`
+  color: #000;
+  font-family: 'Noto Sans JP';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  margin-left: 35px;
+  border: none;
+  background: var(--C1-H, #f9f9f9);
+  margin-top: 10px;
+
+  &:hover {
+    color: #f39c12;
+  }
 `
 
 const Content = styled.p`
@@ -133,4 +158,5 @@ export {
   Button,
   ButtonContent,
   Images,
+  MenuButton,
 }

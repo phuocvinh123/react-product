@@ -6,7 +6,7 @@ import {
   Search,
   CustomSearchIcon,
   MenuContent,
-  P,
+  MenuButton,
   Outer,
   Feature,
   ContentFeature,
@@ -34,10 +34,10 @@ export const Banner = () => {
           <CustomSearchIcon />
         </TSearch>
         <MenuContent>
-          <P>みんなのサービス</P>
-          <P>おすすめ</P>
-          <P>みんなのストア</P>
-          <P>近くのスポット</P>
+          <MenuButton>みんなのサービス</MenuButton>
+          <MenuButton>おすすめ</MenuButton>
+          <MenuButton>みんなのストア</MenuButton>
+          <MenuButton>近くのスポット</MenuButton>
         </MenuContent>
         <Feature>
           <ContentFeature>
