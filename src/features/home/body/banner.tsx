@@ -14,10 +14,27 @@ import {
   ButtonContent,
   Images,
 } from './styled'
+import { useDispatch } from 'react-redux'
+import { setSearchText, setCategory } from '../../slice/productSlice'
 
 import { Body } from './body'
 
 export const Banner = () => {
+  const dispatch = useDispatch()
+  const handleSearch = () => {
+    const searchInput = document.querySelector(
+      '.search-input'
+    ) as HTMLInputElement
+    const searchValue = searchInput.value
+    dispatch(setSearchText(searchValue))
+    searchInput.value = ''
+  }
+
+  const handleFillters = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const value = event.currentTarget.value
+    dispatch(setCategory(value))
+  }
+
   return (
     <>
       <Outer>
@@ -30,14 +47,22 @@ export const Banner = () => {
         <Content>LOGO</Content>
         <TSearch>
           <Search placeholder='キーワード'></Search>
-          <Search></Search>
-          <CustomSearchIcon />
+          <Search className='search-input'></Search>
+          <CustomSearchIcon onClick={handleSearch} />
         </TSearch>
         <MenuContent>
-          <MenuButton>みんなのサービス</MenuButton>
-          <MenuButton>おすすめ</MenuButton>
-          <MenuButton>みんなのストア</MenuButton>
-          <MenuButton>近くのスポット</MenuButton>
+          <MenuButton onClick={handleFillters} value=''>
+            みんなのサービス
+          </MenuButton>
+          <MenuButton onClick={handleFillters} value='HP'>
+            おすすめ
+          </MenuButton>
+          <MenuButton onClick={handleFillters} value='Dell'>
+            みんなのストア
+          </MenuButton>
+          <MenuButton onClick={handleFillters} value='Lenovo'>
+            近くのスポット
+          </MenuButton>
         </MenuContent>
         <Feature>
           <ContentFeature>

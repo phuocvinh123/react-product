@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header } from './header'
-import { MyComponent } from './container'
+import { Header } from './features/home/header'
+import { MyComponent } from './features/home/container'
 
 function App() {
   return (

@@ -1,7 +1,16 @@
 import { MenuOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import { Pagination } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../../store/store'
+import {
+  setProducts,
+  setSearchText,
+  setCategory,
+  setPagination,
+} from '../../slice/productSlice'
 
 const Bodys = styled.div`
   display: flex;
@@ -62,6 +71,7 @@ const BodyList = styled.div`
   border: 1px solid #ddd;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 
   &:hover ${Content} {
     transform: translateY(100%);
@@ -154,16 +164,59 @@ const DivTotal = styled.div`
 `
 
 export const Body = () => {
-  const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 6
+  const dispatch = useDispatch()
+  const { products, pagination, searchText, category } = useSelector(
+    (state: RootState) => state.product
+  )
 
-  const handlePageChange = (page: React.SetStateAction<number>) => {
-    console.log('page :' + page)
-    setCurrentPage(page)
+  const API = 'https://api-product-tfw8.onrender.com'
+
+  useEffect(() => {
+    fetchProducts(
+      pagination.currentPage,
+      pagination.limit,
+      searchText,
+      category
+    )
+  }, [pagination.currentPage, searchText, category])
+
+  const fetchProducts = async (
+    page: number,
+    limit: number,
+    search: string,
+    category: string
+  ) => {
+    try {
+      console.log(category)
+
+      const response = await axios.get(`${API}/api/product/get-all`, {
+        params: {
+          page: page,
+          limit: limit,
+          search: search,
+          category: category,
+        },
+      })
+      const { data, pagination } = response.data
+      dispatch(setProducts(data))
+      dispatch(setPagination(pagination))
+    } catch (error) {
+      console.error('Lỗi khi gọi API:', error)
+      dispatch(setProducts([]))
+      dispatch(
+        setPagination({
+          currentPage: 1,
+          limit: 6,
+          totalPage: 1,
+          totalProducts: 0,
+        })
+      )
+    }
   }
 
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
+  const handlePageChange = (pageNumber: any) => {
+    fetchProducts(pageNumber, pagination.limit, searchText, category)
+  }
 
   return (
     <>
@@ -192,32 +245,30 @@ export const Body = () => {
           <P>10000円から</P>
         </BodyContent>
         <DivTotal>
-          {Array.from({ length: 15 }, (_, index) => {
-            if (index >= startIndex && index < endIndex) {
+          {products &&
+            products?.map((product: any, index: any) => {
               return (
                 <BodyList key={index}>
-                  <Image src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></Image>
+                  <Image src={product?.imageUrl}></Image>
                   <Div>
-                    <ImgRound src='https://i.pinimg.com/originals/39/8b/ad/398badb6f818e82f40302a161717983c.jpg'></ImgRound>
+                    <ImgRound src={product?.imageUrl}></ImgRound>
                     <P>むくりこ</P>
                   </Div>
                   <Div>
-                    <H2>イケア家具組み立て代行</H2>
+                    <H2 style={{ height: '48px' }}>{product?.title}</H2>
                   </Div>
                   <Div>
-                    <P>
-                      IKEA家具の組立します　組立途中、再組立/調整も対応します
-                    </P>
+                    <P>{product?.description}</P>
                   </Div>
                   <DivEnd>
                     <Div>
                       <ImgRound
                         style={{ marginLeft: '14px' }}
-                        src='https://i.pinimg.com/736x/e3/a4/54/e3a45433562a80e6355f12effff6a3d3.jpg'
+                        src={product?.imageUrl}
                       ></ImgRound>
-                      <P>10</P>
+                      <P> {product?.likedCount}</P>
                     </Div>
-                    <H2 style={{ marginRight: '14px' }}>¥ 12,000</H2>
+                    <H2 style={{ marginRight: '14px' }}>¥ {product?.price}</H2>
                   </DivEnd>
                   <Content>イケア家具組立認定サポーター</Content>
                   <Icon>
@@ -249,16 +300,14 @@ export const Body = () => {
                   </Svg>
                 </BodyList>
               )
-            }
-            return null
-          })}
+            })}
         </DivTotal>
       </Bodys>
       <Pagination
-        current={currentPage}
-        pageSize={itemsPerPage}
-        total={15}
-        onChange={(page) => handlePageChange(page)}
+        current={pagination?.currentPage || 1}
+        pageSize={pagination?.limit || 10}
+        total={pagination?.totalProducts || 0}
+        onChange={handlePageChange}
         style={{
           display: 'flex',
           justifyContent: 'end',
