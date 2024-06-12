@@ -36,11 +36,6 @@ const productSlice = createSlice({
   },
 })
 
-export const {
-  setProducts,
-  setSearchText,
-  // setFilters,
-  setPagination,
-  setCategory,
-} = productSlice.actions
+export const { setProducts, setSearchText, setPagination, setCategory } =
+  productSlice.actions
 export default productSlice.reducer

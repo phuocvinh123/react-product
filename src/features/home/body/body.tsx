@@ -5,12 +5,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/store'
-import {
-  setProducts,
-  setSearchText,
-  setCategory,
-  setPagination,
-} from '../../slice/productSlice'
+import { setProducts, setPagination } from '../../slice/productSlice'
 
 const Bodys = styled.div`
   display: flex;
