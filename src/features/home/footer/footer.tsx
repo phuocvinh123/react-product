@@ -31,7 +31,7 @@ export const FooterComponent = () => {
             クレジットカードをお持ちでない方は事務局までご連絡ください。
           </P>
           <DivEnd>
-            <Image src='https://s3-alpha-sig.figma.com/img/1472/175f/dd0a67cf96389208dd4e81337d566095?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CSGSPUnZgVpmekDSfWb~yJiImdk4oE~Obrtr1vU6EChXPK2vEzmivVsBbrx4S6qHqd1txAZ6IneypwxvadYHPR9REWpnvrfJYRmFWDOtAuicVhMbNRr3eB9WSUUqY7kyv4wMfhvLdS7iUh~t9RYoo56t1UC6-oZKf8B2jyqYMeD1dZ7dZZX1Bg1YCxxXX2Y~Pghqhl1MWncBWc6Qgo-Oz~ZM5EX8t~NAFr18Q1Z4HSyHvu~nbuxv2hCH6Dss2WmSuCv3LhtEdY~vgpWRrcn9Egu4ZFZ1seIRM~RofyJKSKY2749upRWOo2EZQtr4shG~lmBrojUwPDsNbMwdawdqRA__'></Image>
+            <Image src='https://s3-alpha-sig.figma.com/img/1472/175f/dd0a67cf96389208dd4e81337d566095?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pwTccQOUtRg7k8ypy-K4b9yjR2XercUP52j-DwPntytqDsGLzldBTuuo7S16zAVfGXxRFCCAVxciXIDTLGcnHZ45VG8mXPfNqW9V-EbROp0nJGSlqHkHK9Wax0C4ugAaa9kk2gnBBXd6bhbZI0VEJBjj6Lrw1dzglS~oRY3WsqxgFXFC1kpVJcxj~iVj6a6SSY48JjJij3H0iifWs3LpJ5~6IQQDTt8CAq-cVLixBw3VZUyA-pqxmqfJYpXpt~eGIUypJWihNCnFZWieaNgLOKl6f8ZBpSU214LXC7V34NVyr~HuoHafkkLIVOCAAzi3rseDEXPKsnSmloiS9yJLrg__'></Image>
             <Image src='https://www.figma.com/file/K2F0T2x3ldEKqlUEgqfyMh/image/a8765ae12dfae7cc9386206dedea2f6b02b73ba1'></Image>
             <Image src='https://www.figma.com/file/K2F0T2x3ldEKqlUEgqfyMh/image/4287ba37d2f388aee74858f9293f7532622a06d1'></Image>
             <Image src='https://www.figma.com/file/K2F0T2x3ldEKqlUEgqfyMh/image/f2bf92d3784cd76d37cbcc3f31c6b8910b2e42da'></Image>

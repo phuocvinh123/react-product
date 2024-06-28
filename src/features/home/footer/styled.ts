@@ -8,7 +8,6 @@ const DivTotal = styled.div`
   background: #fff;
   display: flex;
   justify-content: space-between;
-  /* margin-top: 53px; */
   border-top: 1px solid #d1d1d1;
   margin-left: 37px;
   margin-right: 37px;

@@ -6,30 +6,6 @@ const Outer = styled.div`
   padding-bottom: 44px;
 `
 
-const Menu = styled.div`
-  display: flex;
-  justify-content: end;
-  margin-right: 20px;
-`
-
-const MenuItem = styled.button`
-  color: #000;
-  font-family: 'Noto Sans JP';
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  cursor: pointer;
-  margin-left: 35px;
-  border: none;
-  background: #ffffff;
-  margin-top: 10px;
-
-  &:hover {
-    color: #e67e22;
-  }
-`
-
 const MenuButton = styled.button`
   color: #000;
   font-family: 'Noto Sans JP';
@@ -46,17 +22,6 @@ const MenuButton = styled.button`
   &:hover {
     color: #f39c12;
   }
-`
-
-const Content = styled.p`
-  color: #000;
-  font-family: 'Open Sans';
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding-left: 10px;
-  text-align: center;
 `
 const TSearch = styled.div`
   display: flex;
@@ -144,9 +109,6 @@ const Images = styled.img`
 `
 
 export {
-  Menu,
-  MenuItem,
-  Content,
   TSearch,
   Search,
   CustomSearchIcon,

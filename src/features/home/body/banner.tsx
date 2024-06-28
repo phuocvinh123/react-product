@@ -1,7 +1,4 @@
 import {
-  Menu,
-  MenuItem,
-  Content,
   TSearch,
   Search,
   CustomSearchIcon,
@@ -38,13 +35,6 @@ export const Banner = () => {
   return (
     <>
       <Outer>
-        <Menu>
-          <MenuItem>ログイン</MenuItem>
-          <MenuItem>新規登録</MenuItem>
-          <MenuItem>ご利用の流れ</MenuItem>
-          <MenuItem>マイページ</MenuItem>
-        </Menu>
-        <Content>LOGO</Content>
         <TSearch>
           <Search placeholder='キーワード'></Search>
           <Search className='search-input'></Search>
@@ -74,7 +64,7 @@ export const Banner = () => {
           </Button>
         </Feature>
         <Images
-          src='https://s3-alpha-sig.figma.com/img/bd32/38a7/89d2ef7eb72b18b5c1b7849407612293?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lo3E83Izf5Tj49WywdpIFQhlNfm3WEsIySHQHUEt~1Jf2SXK6l8EmziIKkwStcCV1LYFLs01uIVertlfb~hSmyD6F0ZNh-DmN20N7p1WnhpoQbNgg5umzlmIh2GXAX4W6iCuqBXUnJEUJoQoJzxnJVmOW0lorgM~3P87oovHfxnIwW-Mv93Uh-MyQ9xI-VcXxOHXY0CidmtQE2Zh~E-pv4vXffOS08GtYJwXKx-OOANS2Onr2VSTqfuKDBDcLrMbbPHWVKzKOdo-5vKSffhg1chHTykJOn4O0cjud3GhLuJ2Q3PLc9B7k439zh4GAo88d~ao7phU2a~bhK7UkH1zmw__'
+          src='https://s3-alpha-sig.figma.com/img/bd32/38a7/89d2ef7eb72b18b5c1b7849407612293?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aSA1BC8sn6Mf17Y016b6yFbEhQHnxKBBnZOQzJhVNkADKQRa8HUtl-oITA-5dfC3Xus7R1dzVNA-isauIG13yRaq3XdKLvfji94F1cV4LBLwX8N0S3X6tKJPQpVGBfx91ggB1wSb~xpHSLGWKJghtPOKw~K6gQuO4bCa8tbh~7XBlVzciq4OYxTAE5CpsKLKhRx2~oi2HjpTHI-518ozwnUcHxNrMIfdimzuchhXr5dXGF4S-I4XMwEFcgpPKoAhYELjuZMkJ-C8Zn3LLMZj31T9JC3gpP89FBHQYROqhv6RhtLc~fhH35IMM0hoZcucNRzwsFlthWy1LHIhHQaGCQ__'
           alt='Banner'
         ></Images>
         <Body></Body>

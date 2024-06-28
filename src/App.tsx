@@ -1,13 +1,17 @@
 import React from 'react'
-import { Header } from './features/home/header'
-import { MyComponent } from './features/home/container'
+import { Home } from './features/home'
+import { LoginComponent, RegisterComponent } from './features/auth'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <MyComponent />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<LoginComponent />} />
+        <Route path='/register' element={<RegisterComponent />} />
+      </Routes>
+    </Router>
   )
 }
 
